@@ -11,7 +11,8 @@ const app = express();
 app.get('/', (req, res) => res.send('Hello'));
 
 // Bodyparser Middlewear
-//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // DB config
 const db = require('./config/keys').mongoURI;
